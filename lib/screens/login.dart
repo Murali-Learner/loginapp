@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:loginapp/screens/signup.dart';
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
   TextEditingController _usernameController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  bool checkBoxValue = true;
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -65,18 +67,17 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 //
-                child: Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                        right: 20,
-                      ),
-                      child: Column(
-                        children: [
-                          Positioned(
-                            bottom: 900,
-                            child: Align(
+                child: SingleChildScrollView(
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          right: 20,
+                        ),
+                        child: Column(
+                          children: [
+                            Align(
                               alignment: Alignment.topCenter,
                               child: CircleAvatar(
                                 backgroundColor: Colors.amber,
@@ -89,76 +90,150 @@ class LoginScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
-                          Text(
-                            "Welcome!",
-                            style: TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                          SizedBox(
-                            height: _height * 0.06,
-                          ),
-                          Align(
-                            heightFactor: _height * 0.00003,
-                            widthFactor: double.infinity,
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Username",
+                            Text(
+                              "Welcome!",
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelStyle:
-                                  new TextStyle(color: const Color(0xFF424242)),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber),
+                            SizedBox(
+                              height: _height * 0.06,
+                            ),
+                            Align(
+                              heightFactor: _height * 0.00003,
+                              widthFactor: double.infinity,
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Username",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                            // keyboardType:KeyboardKe
-                            controller: _usernameController,
-                          ),
-                          SizedBox(
-                            height: _height * 0.02,
-                          ),
-                          Align(
-                            heightFactor: _height * 0.00003,
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Password",
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.black,
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelStyle: new TextStyle(
+                                    color: const Color(0xFF424242)),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.amber),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.amber),
+                                ),
+                              ),
+                              // keyboardType:KeyboardKe
+                              controller: _usernameController,
+                            ),
+                            SizedBox(
+                              height: _height * 0.02,
+                            ),
+                            Align(
+                              heightFactor: _height * 0.00003,
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Password",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                          TextFormField(
-                            decoration: InputDecoration(
-                              labelStyle:
-                                  new TextStyle(color: const Color(0xFF424242)),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelStyle: new TextStyle(
+                                    color: const Color(0xFF424242)),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.amber),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.amber),
+                                ),
                               ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.amber),
+                              // keyboardType:KeyboardKe
+                              controller: _passwordController,
+                            ),
+                            Align(
+                              alignment: Alignment.bottomRight,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Forgot Password",
+                                  style: TextStyle(color: Colors.amber),
+                                ),
                               ),
                             ),
-                            // keyboardType:KeyboardKe
-                            controller: _passwordController,
-                          ),
-                        ],
+                            SizedBox(
+                              height: _height * 0.037,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                print("object");
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: Colors.amber,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                height: _height * 0.07,
+                                width: _width * 0.6,
+                                child: Text(
+                                  "LOGIN",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: _height * 0.09,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "don't have an account?",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black.withOpacity(0.6),
+                                      fontSize: 16),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 30),
+                                  child: TextButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return SignupScreen();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      "Singup",
+                                      style: TextStyle(
+                                          decoration: TextDecoration.underline,
+                                          textBaseline:
+                                              TextBaseline.ideographic,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.amber,
+                                          fontSize: 18),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

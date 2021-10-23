@@ -65,95 +65,100 @@ class LoginScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
                 //
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                  ),
-                  child: Column(
-                    children: [
-                      Positioned(
-                        bottom: 900,
-                        child: Align(
-                          alignment: Alignment.topCenter,
-                          child: CircleAvatar(
-                            backgroundColor: Colors.amber,
-                            maxRadius: 40,
-                            child: CircleAvatar(
-                              backgroundImage: AssetImage("images/sunny.jpeg"),
-                              radius: 35,
-                              backgroundColor: Colors.amber,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20,
+                        right: 20,
+                      ),
+                      child: Column(
+                        children: [
+                          Positioned(
+                            bottom: 900,
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: CircleAvatar(
+                                backgroundColor: Colors.amber,
+                                maxRadius: 40,
+                                child: CircleAvatar(
+                                  backgroundImage:
+                                      AssetImage("images/sunny.jpeg"),
+                                  radius: 35,
+                                  backgroundColor: Colors.amber,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                      Text(
-                        "Welcome!",
-                        style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                      ),
-                      SizedBox(
-                        height: _height * 0.06,
-                      ),
-                      Align(
-                        heightFactor: _height * 0.00003,
-                        widthFactor: double.infinity,
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "Username",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
+                          Text(
+                            "Welcome!",
+                            style: TextStyle(
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelStyle:
-                              new TextStyle(color: const Color(0xFF424242)),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.amber),
+                          SizedBox(
+                            height: _height * 0.06,
                           ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.amber),
+                          Align(
+                            heightFactor: _height * 0.00003,
+                            widthFactor: double.infinity,
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Username",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
-                        ),
-                        // keyboardType:KeyboardKe
-                        controller: _usernameController,
-                      ),
-                      SizedBox(
-                        height: _height * 0.02,
-                      ),
-                      Align(
-                        heightFactor: _height * 0.00003,
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "Password",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
+                          TextFormField(
+                            decoration: InputDecoration(
+                              labelStyle:
+                                  new TextStyle(color: const Color(0xFF424242)),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.amber),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.amber),
+                              ),
+                            ),
+                            // keyboardType:KeyboardKe
+                            controller: _usernameController,
                           ),
-                        ),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelStyle:
-                              new TextStyle(color: const Color(0xFF424242)),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.amber),
+                          SizedBox(
+                            height: _height * 0.02,
                           ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.amber),
+                          Align(
+                            heightFactor: _height * 0.00003,
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Password",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
+                            ),
                           ),
-                        ),
-                        // keyboardType:KeyboardKe
-                        controller: _passwordController,
+                          TextFormField(
+                            decoration: InputDecoration(
+                              labelStyle:
+                                  new TextStyle(color: const Color(0xFF424242)),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.amber),
+                              ),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(color: Colors.amber),
+                              ),
+                            ),
+                            // keyboardType:KeyboardKe
+                            controller: _passwordController,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
